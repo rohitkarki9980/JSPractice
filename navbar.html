@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            transition: all 0.5s;
+        }
+
+        nav{
+           display: flex;
+           justify-content: space-evenly;
+           list-style: none;
+           
+        }
+        nav li{
+            padding: 5px 0;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+      
+        nav li:hover{
+            background-color: antiquewhite;
+            color: black;
+        }
+        nav > li > ul{
+            display: none;
+            top: 100%;
+            position: absolute;
+            background-color: rgb(240, 234, 226);
+            list-style: none;
+            width: 100%;
+            padding: 0;
+        }
+       nav li:hover ul{
+        display: block;
+        font-size: 16px;
+       }
+       nav li ul>li:hover{
+        border: 1px solid black;
+        color: peru;
+       }
+       .dropdown{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        display: none;
+        list-style: none;
+        background-color: antiquewhite;
+        height: 100%;
+        padding: 0;
+       }
+
+       header button{
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+        .menus{
+            position: absolute;
+            background-color: gray;
+            color: white;
+            list-style: none;
+            padding: 0;
+            top: 100%;
+            right: 100%;
+            display: none;
+        }
+        .menus li{
+            width: 100%;
+            padding: 5px 20px;
+
+        } 
+         .menus li:hover{
+           border: 1px solid black;
+
+        }
+        header button:hover .menus{
+            display: block;
+        }
+
+       @media screen and (max-width: 768px) {
+        nav{
+            display: none;
+
+        }
+        header button{
+            display: block;
+        }
+}
+       
+
+        
+    </style>
+</head>
+<body>
+    <Header>
+        <nav>
+                    <li>Home</li>
+                    <li class="menu-items">Category
+                        <ul>
+                            <li>Mobile
+                                <ul class="dropdown">
+                                    <li >Apple</li>
+                                    <li >Samsung</li>
+                                    <li >Huwaei</li>
+                                    <li >LG</li>
+                                </ul>
+                            </li>
+                            <li >Laptop</li>
+                            <li >Earphone</li>
+                            <li>Fitness</li>
+                            <li ></li>
+                        </ul>
+                    </li>
+                    <li>About</li>
+                    <li>Content</li>
+        </nav>
+        <button class="bttn">
+            Menu
+            <ul class="menus">
+                <li>Home</li>
+                <li>Menu</li>
+                <li>About</li>
+                <li> Categories</li>
+                <li> Services</li>
+                <li> Contacts</li>
+            </ul>
+        </button>
+    </Header>
+</body>
+</html>
