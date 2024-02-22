@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Example</title>
+</head>
+<body>
+
+    <script>
+     
+     let arr = ["rohit", "john", "shaurav", 1, 2, 3, "name", { caste: "hero" }, null, true, false];
+    document.write(arr);
+    document.write("<br>"+arr.length);
+    document.write("<br>"+arr[0]);
+    document.write("<br>"+arr[arr.length-1]);
+
+    let fruits=["apple","banana","orrange","mango","banana"];
+
+    //push -to add new member in the end of the array;
+    //unshift-to add new member in the start of the array;
+    fruits.push("pineapple")
+    document.write("<br> Push:"+ fruits);
+    fruits.unshift("Rose")
+    document.write("<br> unshift:"+ fruits);
+    //pop -to delete new member in the end of the array;
+     //shift-to delete new member in the start of the array;
+    let deleted= fruits.pop();
+    document.write("<br> Pop:"+ fruits);
+    document.write("<br> Deleted::"+ deleted);
+
+    deleted= fruits.shift();
+    document.write("<br> Shift:"+ fruits);
+    document.write("<br> Deleted:"+ deleted);
+
+    /*
+    splice // to add or remove from anywhere in the array
+     splice(index,number,new_members)
+    index-where to add or remove in the array
+     number-number of memebers to remove
+     new_member-new items to add in the array
+    */
+
+    deleted =fruits.splice(2,2,"papaya","pear")
+    document.write("<br> Deleted splice:" + deleted )
+    document.write("<br> Splice:" + fruits )
+   
+
+
+    fruits.sort()
+    document.write("<br> Sort:" + fruits.sort() )
+    fruits.reverse()
+    document.write("<br> Reversed:" + fruits )
+    fruits.fill("test",2,2)
+    document.write("<br> Fill:" + fruits )
+
+    //number cant be sort
+    num=[2,5,43,555,3334,554,444,50]
+    num.sort((a,b ) => b-a);
+    document.write("<br> Sort:" + num )
+          
+ /*
+    slice-o create new array
+    slice(start,index,end-index):end not included
+    if negative counts from -1 as last index
+
+    */
+    let new_fruits=fruits.slice(0,4)
+    document.write("<br> Slice:" + new_fruits);
+
+   //foreach
+   //map
+   //filter
+   //find
+   //findindex/replace
+
+
+
+
+
+
+
+      
+    </script>
+</body>
+</html>
