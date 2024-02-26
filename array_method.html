@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ['apple', 'orange', 'mango', 'pear', 'papaya'];
+
+        // Using for loop
+        document.write("<h1> For</h1>");
+        for (let i = 0; i < fruits.length; i++) {
+            document.write("<li>" + fruits[i] + "</li>");
+        }
+
+        // Using for...in loop
+        document.write("<h1> For in</h1>");
+        for (let i in fruits) {
+            document.write("<li>" + fruits[i] + "</li>");
+        }
+
+        // Using for...of loop
+        document.write("<h1> For OF</h1>");
+        for (let item of fruits) {
+            document.write("<li>" + item + "</li>");
+        }
+
+        // Using forEach
+        document.write("<h1> For Each</h1>");
+        fruits.forEach((item, i) => {
+            document.write("<li>"+i + item + "</li>");
+        });
+        //map
+        document.write("<h1> Map</h1>");
+        let new_fruits=fruits.map(item=>item.toUpperCase())
+        document.write(new_fruits)
+        document.write("<h1> Map Example2</h1>");
+        let next_fruits=fruits.map((item)=>{
+           return item.toUpperCase()
+        })
+       
+        document.write(next_fruits)
+        //filtered
+        document.write("<h1> Filtered</h1>");
+        let filtered = fruits.filter(item=>item.match("ap"))
+        document.write("<br>"+filtered+"<br>")
+        //filtered in number
+        document.write("<h1> Filtered in Number </h1>");
+        let number=[1,2,3,4,5,6]
+        number = number.filter(num=>num>2);
+        document.write("<br>"+number+"<br>")
+        //find in string
+        document.write("<h1> Find in string </h1>");
+        let find =fruits.find(item=>item.match("ap"))
+        document.write("<br>"+find+"<br>")
+         //find in number
+        document.write("<h1> Find in number </h1>");
+        n = number.find(num=>num>2);
+        document.write("<br>"+n+"<br>")
+
+        // //find_index
+        document.write("<h1> Find Index </h1>");
+        
+        num = number.findIndex(num=>num>2);
+        document.write(num)
+
+        //fill(char,startIndex,end index)
+        document.write("<h1> Fill </h1>");
+        fruits=fruits.fill("000",3)
+        document.write(fruits)
+
+        //find Last index
+         document.write("<h1> Find last Index </h1>");
+        find =fruits.findLastIndex(item=>item.match(""))
+        document.write("<br>"+find+"<br>")
+
+
+         //find in number
+        document.write("<h1> Find last Index in number </h1>");
+        lastIndex = number.findLastIndex();
+        document.write("<br>"+lastIndex+"<br>")
+
+
+    </script>
+</body>
+</html>
