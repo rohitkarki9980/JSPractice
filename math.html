@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Pi = Math.PI;
+
+      document.write("<br>" + Pi);
+      let ans = Math.pow(2, 5);
+      document.write("<br>2 <sup>5</sup>:" + ans);
+      ans = Math.sqrt(49);
+      document.write("<br>Ans:" + ans);
+
+      ans = Math.sin(90);
+      document.write("<br>Sin90r:" + ans);
+      //0-1
+      let r = Math.random();
+      document.write("<br>Random:" + r);
+      r = Math.random() * 100;
+      document.write("<br>Random:" + r);
+      r = Math.random() * 100 + 50;
+      document.write("<br>Random:" + r);
+
+      Math.trunc(r);
+      document.write("<br>Truncate:" + r);
+
+      ans = Math.round(r);
+      document.write("<br>Round:" + ans);
+
+      ans = Math.floor(r);
+      document.write("<br>floor:" + ans);
+
+      ans = Math.ceil(r);
+      document.write("<br>Ceil:" + ans);
+      let d = Math.ceil(Math.random() * 6);
+      document.write("<br>Dice:" + d+"<br>");
+      let result = ["rock", "paper", "scissor"];
+      let c = result[Math.floor(Math.random() * 3)];
+      let player = prompt("Choose rock paper scissors")
+        .trim()
+        .replace(/ /, "")
+        .toLocaleLowerCase();
+      if (
+        (player === "rock" && c === "scissor") ||
+        (player === "paper" && c === "rock") ||
+        (player === "scissor" && c === "paper")
+      ) {
+        document.write(`You choose ${player}, Computer was ${c}<br>`);
+        document.write(`Player wins`);
+      } else if (
+        (player === "scissor" && c === "rock") ||
+        (player === "paper" && c === "scissor") ||
+        (player === "rock" && c === "paper")
+      ) {
+        document.write(`You choose ${player}, Computer was ${c}<br>`);
+        document.write(`Computer wins`);
+      } else {
+        document.write(`You choose ${player}, Computer was ${c}<br>`);
+        document.write(`It's a tie`);
+      }
+    </script>
+  </body>
+</html>
