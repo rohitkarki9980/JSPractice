@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validator</title>
+</head>
+<body>
+    <script>
+        
+        // `  ` template literal 
+        // /  ..  / regular  expression
+        // /    / expression literal
+        // /abc / abc
+        // [ ] collection
+        //[avbbjhbfjdh343]any of this character
+        // [a-z] -->lowercase
+        // [A-Z]-->Uppercase
+        //. single character
+        //^ start
+        //$ end
+        //{ } length
+        
+
+        let str= "abc"
+        let regex =/abc/ 
+        if (str.match(regex)){
+            document.write("/abc / : Match")
+        }
+        else{
+            document.write("Not matched") 
+        }
+        str="abc"
+        regex =[a-b]
+
+        if (str.match(regex)){
+            document.write("[a-b] : Match")
+        }
+        else{
+            document.write("Not matched") 
+        }
+        </script>
+</body>
+</html>
