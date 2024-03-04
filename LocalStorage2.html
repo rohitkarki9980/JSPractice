@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let name =  localStorage.getItem("Name")
+        document.write("Name:" + name)
+        let ph= localStorage.getItem("Ph")
+        document.write("<br>Ph:"+ph)
+        let fruits = JSON.parse(localStorage.getItem("Fruits"));
+        fruits.map(fruit=>{
+            document.write("<li>"+fruit+"</li>")
+        })
+        person = JSON.parse(localStorage.getItem("person"))
+        console.log(person)
+        document.write("<br>"+ person.name)
+        document.write("<br>"+ person.Phone)
+        
+    </script>
+    
+</body>
+</html>
