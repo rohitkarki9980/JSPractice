@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class plane{
+            constructor(BusModel, flightTime){
+                this.BusModel=BusModel,
+                this.flightTime=flightTime
+            }
+            info(){
+                document.write(`Hello passenger this is a bus model ${this.BusModel} and we have a flight time of  ${this.flightTime}`)
+            }
+
+        }
+
+        let airbus = new plane('A13200','250hrs')
+        airbus.info();
+
+
+        class NewPlane extends plane{
+            constructor(BusModel,flightTime,seatCapacity){
+                super(BusModel,flightTime)
+                this.seatCapacity=seatCapacity
+            }
+            info(){
+                document.write(`<br> This is a new plane ${this.BusModel} with flight Time of ${this.flightTime} and seat capacity of ${this.seatCapacity}`)
+            }
+
+        }
+        let Boeing = new NewPlane("Boeing","200hrs","300")
+        Boeing.info()
+    </script>
+</body>
+</html>
