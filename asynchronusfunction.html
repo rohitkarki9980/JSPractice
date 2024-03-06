@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fruits = ["apple", "orange", "mango"]
+
+        function display() {
+            document.write("<br>Fruits = " + fruits)
+        }
+
+        const add_fruit = (fruit) => {
+            fruits.push(fruit)
+        }
+
+        // add_fruit("banana")
+        // display()
+        // add_fruit("pear")
+        // display()
+
+        // setInterval, setTimeout
+
+        function display_async() {
+            setTimeout(() => {
+                document.write("Async")
+                display()
+            }, 1000)
+        }
+
+        const add_fruit_async = (fruit, callback) => {
+            setTimeout(() => {
+                add_fruit(fruit)
+                callback()
+
+            }, 2000);
+        }
+
+        const add_fruit_promise = (fruit) => {
+            return new Promise((resolve, reject)=>{
+                let error = true
+                setTimeout(()=>{
+                    if(!error){
+                        fruits.push(fruit)
+                        resolve()
+                    }
+                    else{
+                        reject("Failed to add")
+                    }
+                },2000)
+            })
+        }
+
+
+    //      1. Callback
+        // add_fruit_async("Papaya", display_async)
+        // add_fruit_async("PEAR", ()=>display_async())
+
+    //      2. Promise (.then.catch)
+        // add_fruit_promise("GRAPES")
+        // .then(display_async)
+        // .then(()=>display_async())
+        // .catch(error=>document.write(error))
+
+    //      3. Promise (async-await)
+    // async function(){
+        // await function_to_complete()
+        // function to execute_after()
+    // }
+
+    // async function demofunction(fruit){
+        const demofunction = async (fruit) => {
+        try{
+            await add_fruit_promise(fruit)
+            display_async()
+        }
+        catch(error){
+            document.write(error)
+        }
+    }
+
+    demofunction("POMEGRANATE")
+
+
+    </script>
+</body>
+
+</html>
